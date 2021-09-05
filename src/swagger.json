@@ -1,0 +1,366 @@
+{
+    "openapi": "3.0.0",
+    "info": {
+        "title": "API Challenge-CompassoUol",
+        "description": "Essa API tem como objetivo testar meus conhecimentos, em Back-End",
+        "contact": {
+            "email": "jonathangrouproot@gmail.com"
+        },
+        "version": "1.0.0"
+    },
+    "servers": [
+        {
+            "url": "http://localhost:3000",
+            "description": "API base"
+        }
+    ],
+    "paths": {
+        "/createCity": {
+            "post": {
+                "summary": "Responsável pela criação das cidades",
+                "description": "Essa rota será responsável pela criação das cidades no banco de dados ",
+                "tags": [
+                    "City"
+                ],
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/City"
+                            },
+                            "examples": {
+                                "City": {
+                                    "value": {
+                                        "name": "Anápolis",
+                                        "state": "GO"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "400": {
+                        "description": "City: City already registered"
+                    },
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "$ref": "#/components/schemas/City"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/listenCity": {
+            "get": {
+                "description": "Responsável pela listagem das cidades cadastradas",
+                "tags": [
+                    "City"
+                ],
+                "summary": "Responsável pela listagem das cidades cadastradas",
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "$ref": "#/components/schemas/City"
+                                }
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "Error -> erro"
+                    }
+                }
+            }
+        },
+        "/filterCityName": {
+            "get": {
+                "description": "Filtrar cidade pelo nome",
+                "tags": [
+                    "City"
+                ],
+                "summary": "Filtrar cidade pelo nome",
+                "parameters": [
+                    {
+                        "name": "name_city",
+                        "in": "query",
+                        "description": "Filtrar a cidade pelo nome",
+                        "required": true
+                    }
+                ],
+                "responses": {
+                    "400": {
+                        "description": "Error -> erro"
+                    },
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "$ref": "#/components/schemas/City"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/filterStateName": {
+            "get": {
+                "description": "Filtrar estado pelo nome",
+                "tags": [
+                    "City"
+                ],
+                "summary": "Filtrar estado pelo nome",
+                "parameters": [
+                    {
+                        "name": "state",
+                        "in": "query",
+                        "description": "Filtrar a cidade pelo nome",
+                        "required": true
+                    }
+                ],
+                "responses": {
+                    "400": {
+                        "description": "Error -> erro"
+                    },
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "$ref": "#/components/schemas/City"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/createClient/{city_id}": {
+            "post": {
+                "summary": "Responsável pela criação dos usuários, e suas respectivas cidades",
+                "description": "Essa rota será responsável pela criação dos usuários, e suas respectivas cidades",
+                "tags": [
+                    "Client"
+                ],
+                "parameters": [
+                    {
+                        "name": "city_id",
+                        "in": "path",
+                        "description": "Cadastrar o cliente em sua respectiva cidade",
+                        "required": true
+                    }
+                ],
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/Client"
+                            },
+                            "examples": {
+                                "Client": {
+                                    "value": {
+                                        "full_name": "Jonathan vinicius braz silva",
+                                        "sexo": "Masculino",
+                                        "birth_date": "2003-01-08",
+                                        "age": "18"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "400": {
+                        "description": "Erro -> error"
+                    },
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "$ref": "#/components/schemas/Client"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/filterClientName": {
+            "get": {
+                "description": "Filtrar client pelo nome",
+                "tags": [
+                    "Client"
+                ],
+                "parameters": [
+                    {
+                        "name": "full_name",
+                        "in": "query",
+                        "description": "Filtrar o cliente pelo nome",
+                        "required": true
+                    }
+                ],
+                "summary": "Filtrar client pelo nome",
+                "responses": {
+                    "400": {
+                        "description": "Error -> erro"
+                    },
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "$ref": "#/components/schemas/Client"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/consultCustomerById/{client_id}": {
+            "get": {
+                "description": "Consultar um cliente pelo ID",
+                "tags": [
+                    "Client"
+                ],
+                "summary": "Consultar um cliente pelo ID",
+                "parameters": [
+                    {
+                        "name": "client_id",
+                        "in": "path",
+                        "description": "Consultar um cliente pelo ID",
+                        "required": true
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK"
+                    },
+                    "400": {
+                        "description": "Customer not registered"
+                    }
+                }
+            }
+        },
+        "/deleteClient/{client_id}": {
+            "delete": {
+                "description": "Exclusão de um client pelo ID",
+                "tags": [
+                    "Client"
+                ],
+                "summary": "Exclusão de um client pelo ID",
+                "parameters": [
+                    {
+                        "name": "client_id",
+                        "in": "path",
+                        "description": "Exclusão de um client pelo ID",
+                        "required": true
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Client deleted sucessuful"
+                    },
+                    "400": {
+                        "description": "Customer not registered"
+                    }
+                }
+            }
+        },
+        "/updateClient/{client_id}": {
+            "put": {
+                "description": "Atualizar o nome de um client atráves de seu ID",
+                "tags": [
+                    "Client"
+                ],
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/Client"
+                            },
+                            "examples": {
+                                "Client": {
+                                    "value": {
+                                        "full_name": "Jonathan Vinicius Braz Silva"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "summary": "Atualizar o nome de um client atráves de seu ID",
+                "parameters": [
+                    {
+                        "name": "client_id",
+                        "in": "path",
+                        "description": "Atualizar o nome de um client atráves de seu ID",
+                        "required": true
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Client updated sucessuful"
+                    },
+                    "400": {
+                        "description": "Customer not registered"
+                    }
+                }
+            }
+        }
+    },
+    "components": {
+        "schemas": {
+            "City": {
+                "type": "object",
+                "properties": {
+                    "name": {
+                        "type": "string"
+                    },
+                    "state": {
+                        "type": "string"
+                    },
+                    "createdAt": {
+                        "type": "date"
+                    },
+                    "updatedAt": {
+                        "type": "date"
+                    }
+                }
+            },
+            "Client": {
+                "type": "object",
+                "properties": {
+                    "full_name": {
+                        "type": "string"
+                    },
+                    "sexo": {
+                        "type": "string"
+                    },
+                    "birth_date": {
+                        "type": "string"
+                    },
+                    "age": {
+                        "type": "string"
+                    }
+                }
+            }
+        }
+    }
+}

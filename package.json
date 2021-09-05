@@ -1,0 +1,28 @@
+{
+  "name": "challengecompassouol",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/jonathanGroupRoot/challenge-compassoUol.git",
+  "author": "Jonathan Vinicius Braz Silva <58049154+jonathanGroupRoot@users.noreply.github.com>",
+  "license": "MIT",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "cors": "^2.8.5",
+    "express": "^4.17.1",
+    "jest": "^27.1.0",
+    "mysql2": "^2.3.0",
+    "sequelize": "^6.6.5",
+    "sequelize-cli": "^6.2.0",
+    "supertest": "^6.1.6",
+    "swagger-ui-express": "^4.1.6",
+    "yarn": "^1.22.11"
+  },
+  "scripts": {
+    "start": "nodemon src/server.js",
+    "test": "jest"
+  },
+  "devDependencies": {
+    "@types/supertest": "^2.0.11",
+    "nodemon": "^2.0.12"
+  }
+}
