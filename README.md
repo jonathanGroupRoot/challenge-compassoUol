@@ -12,14 +12,15 @@ Esse projeto foi desenvolvido com o objetivo de ensinar testar meus conhecimento
 
 # ChallengeCompassoUol
 Requisitos da entrega Nesta estapa esperamos que você construa o código que contemple as seguintes operações expostas como endpoints REST para: 
-    Cadastrar cidade [x] <br/>
-    Cadastrar cliente [X]<br/>
-    Consultar cidade pelo nome [x]<br/>
-    Consultar cidade pelo estado [x]<br/>
-    Consultar cliente pelo nome [x]<br/>
-    Consultar cliente pelo Id [X]<br/>
-    Remover cliente [X]<br/>
-    Alterar o nome do cliente [X]<br/>
+    <br/>
+    Cadastrar cidade [ ] <br/>
+    Cadastrar cliente [ ]<br/>
+    Consultar cidade pelo nome [ ]<br/>
+    Consultar cidade pelo estado [ ]<br/>
+    Consultar cliente pelo nome [ ]<br/>
+    Consultar cliente pelo Id [ ]<br/>
+    Remover cliente [ ]<br/>
+    Alterar o nome do cliente [ ]<br/>
     Considere o cadastro com dados básicos:  
     Cidades: nome e estado 
     Cliente: nome completo, sexo, data de nascimento, idade e cidade onde mora.
@@ -72,12 +73,12 @@ Banco - MYSQL.
 ```
 ## ☑️ Funcionalidades
 
-Cadastrar cidade [x] <br/>
-Cadastrar cliente [X]<br/>
-Consultar cidade pelo nome [x]<br/>
-Consultar cidade pelo estado [x]<br/>
-Consultar cliente pelo nome [x]<br/>
-Consultar cliente pelo Id [X]<br/>
-Remover cliente [X]<br/>
-Alterar o nome do cliente [X]<br/>
+Cadastrar cidade [ ] <br/>
+Cadastrar cliente [ ]<br/>
+Consultar cidade pelo nome [ ]<br/>
+Consultar cidade pelo estado [ ]<br/>
+Consultar cliente pelo nome [ ]<br/>
+Consultar cliente pelo Id [ ]<br/>
+Remover cliente [ ]<br/>
+Alterar o nome do cliente [ ]<br/>
 
