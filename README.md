@@ -35,7 +35,7 @@ ORM - Sequelize.<br/>
 Banco - MYSQL.<br/>
 
 
-## 🗂 Material de apoio 📃
+## 🗂 Material de apoio 
 
 - [Express](http://expressjs.com/)
 - [Sequelize](https://sequelize.org/)
@@ -82,3 +82,4 @@ Consultar cliente pelo Id [ ]<br/>
 Remover cliente [ ]<br/>
 Alterar o nome do cliente [ ]<br/>
 
+<h3 align="center">👨‍💻 Desenvolvido por Jonathan Vinicius Braz Silva 👨‍💻</h3>
