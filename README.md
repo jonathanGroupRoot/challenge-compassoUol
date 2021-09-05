@@ -28,11 +28,11 @@ Requisitos da entrega Nesta estapa esperamos que você construa o código que co
 
 
 ## ✍🏻 Ferramentas e Skill
-
-Linguagem Javascript - Runtime Enviroment NodeJs.
-Framework: Express
-ORM - Sequelize.
-Banco - MYSQL.
+<br/>
+Linguagem Javascript - Runtime Enviroment NodeJs.<br/>
+Framework: Express<br/>
+ORM - Sequelize.<br/>
+Banco - MYSQL.<br/>
 
 
 ## 🗂 Material de apoio 📃
