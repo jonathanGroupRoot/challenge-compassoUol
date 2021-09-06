@@ -14,9 +14,21 @@ module.exports = {
         try {
             const { name, state } = req.body;
 
-            const city = await City.create({ name, state });
+            const searchCity = await City.findOne({
+                where: {
+                    name: name
+                }
+            });
 
-            return res.status(200).json({ City: city });
+            if (searchCity) {
+                return res.status(400).json({ City: "City already registered" });
+            } else {
+                const city = await City.create({ name, state });
+                return res.status(200).json({ City: city });
+            }
+
+
+           
         } catch (error) {
             return res.status(400).json({ Erro: error });
         }

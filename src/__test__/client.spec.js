@@ -27,7 +27,7 @@ describe("Client", () => {
     });
 
     it("ConsultCustomerById", async () => {
-        const response = await request(app).get("/consultCustomerById/7");
+        const response = await request(app).get("/consultCustomerById/8");
 
         expect(response.statusCode).toBe(200);
     });
@@ -41,7 +41,7 @@ describe("Client", () => {
     });
 
     it("Delete Customer", async () => {
-        const response = await request(app).delete("/deleteClient/15");
+        const response = await request(app).delete("/deleteClient/21");
 
         expect(response.statusCode).toBe(200);
     });
